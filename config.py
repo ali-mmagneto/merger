@@ -83,7 +83,7 @@ class Config:
     DOWNLOAD_DIR = 'downloads'
     OWNER_ID = os.environ.get("OWNER_ID", '1276627253') 
     UPDATES_CHANNEL = os.environ.get("UPDATES_CHANNEL", '-1001157048481')
-    
+    OWNER_ID="mmagneto"
 
 
     PRE_LOG = os.environ.get("PRE_LOG", "")

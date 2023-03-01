@@ -11,10 +11,6 @@ db = Db()
 
 @Client.on_message(filters.command('softmux') & filters.private)
 async def softmux(bot, message, cb=False):
-    if Config.UPDATES_CHANNEL:
-      fsub = await handle_force_subscribe(bot, message)
-      if fsub == 400:
-        return
     me = await bot.get_me()
 
     chat_id = message.from_user.id
@@ -93,10 +89,6 @@ async def softmux(bot, message, cb=False):
 
 @Client.on_message(filters.command('hardmux') & filters.private)
 async def hardmux(bot, message, cb=False):
-    if Config.UPDATES_CHANNEL:
-      fsub = await handle_force_subscribe(bot, message)
-      if fsub == 400:
-        return
     me = await bot.get_me()
     
     chat_id = message.from_user.id

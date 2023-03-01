@@ -15,10 +15,6 @@ db = Db()
 
 @Client.on_message(filters.document & filters.private)
 async def save_doc(bot, message, cb=False):
-    if Config.UPDATES_CHANNEL:
-      fsub = await handle_force_subscribe(bot, message)
-      if fsub == 400:
-        return
     me = await bot.get_me()
     chat_id = message.from_user.id
     start_time = time.time()
@@ -100,10 +96,6 @@ async def save_doc(bot, message, cb=False):
 
 @Client.on_message(filters.video & filters.private)
 async def save_video(bot, message, cb=False):
-    if Config.UPDATES_CHANNEL:
-      fsub = await handle_force_subscribe(bot, message)
-      if fsub == 400:
-        return
     me = await bot.get_me()
 
     chat_id = message.from_user.id
@@ -162,10 +154,6 @@ async def save_video(bot, message, cb=False):
 
 @Client.on_message(filters.text & filters.regex('^http') & filters.private)
 async def save_url(bot, message, cb=False):
-    if Config.UPDATES_CHANNEL:
-      fsub = await handle_force_subscribe(bot, message)
-      if fsub == 400:
-        return
     me = await bot.get_me()
     chat_id = message.from_user.id
     save_filename = None

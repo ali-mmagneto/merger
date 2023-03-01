@@ -6,7 +6,6 @@ from helper_func.dbhelper import Database as Db
 db = Db().setup()
 from pyrogram.raw.all import layer
 import pyrogram
-from helper_func.thumb import ReadableTime
 from pyrogram import Client, __version__
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -52,7 +51,7 @@ class Bot(Client):
 
     async def stop(self, *args):
         if Config.OWNER_ID != 0:
-            texto = f"Son nefesimi verdim.\nÖldüğümde yaşım: {ReadableTime(time.time() - botStartTime)}"
+            texto = f"Son nefesimi verdim.\nÖldüğümde yaşım: {time.time() - botStartTime}"
             try:
                 await self.send_document(document='log.txt', caption=texto, chat_id=Config.OWNER_ID)
             except Exception as t:

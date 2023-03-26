@@ -6,3 +6,4 @@ hachoir
 ffmpeg-python
 asyncio
 python-dotenv
+bs4

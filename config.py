@@ -90,4 +90,6 @@ class Config:
     if len(STRING_SESSION) != 0: 
         userbot = Client(name='userbot', api_id=APP_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML)
         userbot.start()
+        me = userbot.get_me()
+        userbot.send_message(OWNER_ID, f"Userbot Bașlatıldı..\n\n**Premium Durumu**: {me.is_premium}\n**Ad**: {me.first_name}\n**id**: {me.id}")
         print("Userbot Başlatıldı 4 gb yükleme aktif")

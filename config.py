@@ -85,7 +85,7 @@ class Config:
     OWNER_ID="mmagneto"
 
 
-    PRE_LOG = os.environ.get("PRE_LOG", "")
+    PRE_LOG = int(os.environ.get("PRE_LOG", ""))
     STRING_SESSION = os.environ.get('STRING_SESSION', '')
     if len(STRING_SESSION) != 0: 
         userbot = Client(name='userbot', api_id=APP_ID, api_hash=API_HASH, session_string=STRING_SESSION, parse_mode=enums.ParseMode.HTML)
